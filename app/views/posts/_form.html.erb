@@ -1,0 +1,33 @@
+
+<div id="respond">
+<h3>New Post</h3>
+  <%= form_with(model: post, local: true) do |form| %>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Title</label>
+    <%= form.text_field :title, id: :post_title,class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Description</label>
+    <%= form.text_area :description, id: :post_description,class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <%= form.file_field :image, id: :post_image %>
+  </div>
+
+
+  <%= form.submit "submit" ,class: "btn btn-default" %>
+    <button type="Reset" class="btn btn-default">Reset</button>
+  <%end%>
+</div> 
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <style type="text/css">
+     #respond{
+      margin: 5% !important;
+     }
+   </style>
+

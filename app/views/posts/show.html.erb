@@ -1,0 +1,22 @@
+<div class="wrapper col3">
+  <div id="container">
+    <div id="respond">
+
+    <!--   <img class="imgr" src="/assets/imgr.gif" alt="" width="125" height="125" />
+      <p>Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur.</p>
+      <p>Dapiensociis <a href="#">temper donec auctortortis cumsan</a> et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.</p> -->
+      <!-- <img class="imgl" src="/assets/imgl.gif" alt="" width="125" height="125" /> -->
+       <h2><%=@post.user.try(:email)%></h2>
+       <%=image_tag(@post.try(:image).try(:url),width: "125" ,height: "125")%>
+        <p><%=@post.description%></p>
+        <%=link_to "edit",edit_post_path(@post)%>
+        <%= link_to 'Back', posts_path %>
+
+    </div>
+  </div>
+</div>
+ <style type="text/css">
+     #respond{
+      margin: 5% !important;
+     }
+   </style>
