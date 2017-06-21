@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :advertisements
   resources :contacts ,only:[:new,:create] do
   	collection do
   		post :get_state

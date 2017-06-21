@@ -62,8 +62,6 @@ $("#contact_state").change(function(){
                 'authenticity_token': '<%=form_authenticity_token %>'
             },
             success: function (result) {
-               console.log(result)  
-               manish = result;
                state = $("#contact_state");
                
               if (result.data.length > 0) { 

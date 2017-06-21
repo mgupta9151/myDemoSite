@@ -14,3 +14,23 @@
  *= require_self
  */
 @import "bootstrap";
+
+/*.nav > li > a {
+    color: #ffffff;
+}*/
+
+.navbar {
+    background: #3e7060 !important;
+    margin-left: 0;
+    margin-right: 0;
+    color: #ffffff !important;
+    top:0;
+    position: fixed;
+}
+
+
+.navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #190532 !important;
+}

@@ -7,7 +7,7 @@
       <p>Dapiensociis <a href="#">temper donec auctortortis cumsan</a> et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.</p> -->
       <!-- <img class="imgl" src="/assets/imgl.gif" alt="" width="125" height="125" /> -->
        <h2><%=post.user.try(:email)%></h2>
-       <%=image_tag(post.try(:image).try(:url),width: "125" ,height: "125")%>
+       <%=link_to image_tag(post.try(:image).try(:url),width: "125" ,height: "125")%>
         <p><%=post.description%></p>
         <%=link_to "edit",edit_post_path(post)%>
          <%=link_to "Show",post_path(post)%>
@@ -95,34 +95,17 @@
     </div>
     <div id="column">
       <div class="sponsors">
-        <h2 class="title">Site Sponsors</h2>
+        <h2 class="title">Advertisiment</h2>
         <ul id="banner125">
-          <li><a href="#"><img src="/assets/125.gif" alt="" /></a></li>
-          <li><a href="#"><img src="/assets/125.gif" alt="" /></a></li>
-          <li><a href="#"><img src="/assets/125.gif" alt="" /></a></li>
-          <li><a href="#"><img src="/assets/125.gif" alt="" /></a></li>
-          <li><a href="#"><img src="/assets/125.gif" alt="" /></a></li>
-          <li><a href="#"><img src="/assets/125.gif" alt="" /></a></li>
+        <%unless @advertsiments.present?%>
+        <li><a href="javascript:void(0);"><img src="/assets/250x100.gif" alt="" width= "125" height=  "125" /></a></li>
+        <%end%>
+        <%@advertsiments.each do |advertsiment|%>
+          <li><a href="javascript:void(0);"><img src="<%=advertsiment.image_url %>" alt="" width= "125" height=  "125"  /></a></li>
+         <%end%>
         </ul>
         <div class="clear"></div>
-      </div>
-       Banners 
-     <div class="holder">
-        <h2>Lorem ipsum dolor</h2>
-        <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed.</p>
-        <ul>
-          <li><a href="#">Lorem ipsum dolor sit</a></li>
-          <li>Etiam vel sapien et</li>
-          <li><a href="#">Etiam vel sapien et</a></li>
-        </ul>
-        <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed. Condimentumsantincidunt dui mattis magna intesque purus orci augue lor nibh.</p>
-        <p class="readmore"><a href="#">Read More &raquo;</a></p>
-      </div>
-      <div class="holder">
-        <div class="imgholder"><img src="/assets/250x100.gif" alt="" /></div>
-        <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.</p>
-        <p class="readmore"><a href="#">Read More &raquo;</a></p>
-      </div>
+      </div>      
     </div>
     <div class="clear"></div>
   </div>
